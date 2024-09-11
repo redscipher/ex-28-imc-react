@@ -1,9 +1,16 @@
 // importacoes
+import Cabecalho from "./componentes/cabecalho";
+import Corpo from "./componentes/corpo";
+import Roda from "./componentes/roda";
+import './index.scss';
+
 function App() {
 
   return (
     <>
-    <h1>ola</h1>
+      <Cabecalho></Cabecalho>
+      <Corpo></Corpo>
+      <Roda></Roda>
     </>
   )
 }

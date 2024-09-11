@@ -1,0 +1,10 @@
+// importacao
+@use './sass/variaveis';
+
+// elementos
+main {
+  // background-color: blue;
+  // faz com que o main ocupe todo espaco disponivel
+  flex-grow: 1;
+}
+/*  */

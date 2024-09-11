@@ -1,0 +1,19 @@
+// importacao
+@use '../../sass/variaveis';
+
+footer{
+    
+    div{
+        // arredondamento
+        border-radius: 50px;
+        border-style: dashed;
+        // cor
+        background-color: lighten(variaveis.$corFundo, 15%);
+    }
+
+    h3{
+        font-size: 16px;
+        padding-bottom: 16px;
+        padding-top: 16px;
+    }
+}

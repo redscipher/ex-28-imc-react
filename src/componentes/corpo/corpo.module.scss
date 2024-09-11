@@ -1,0 +1,29 @@
+.formulario{
+    width: 100%;
+    justify-content: center;
+
+    div{
+        display: flex;
+        justify-content: center;
+
+        input{
+            width: 40%;
+            margin: 16px;
+        }
+
+        label{
+            width: 10%;
+        }
+    }
+
+    label{
+        padding-top: 8px;
+        margin: 16px;
+        width: 50%;
+    }
+}
+
+.classificacao{
+    text-align: start;
+    padding-top: 16px;
+}

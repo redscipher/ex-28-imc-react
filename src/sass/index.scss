@@ -1,0 +1,25 @@
+/* importacoes */
+@use './variaveis';
+
+// geral
+*{
+    font-family: "Playpen Sans", cursive;
+}
+
+// elementos
+body{
+    background-color: variaveis.$corFundo;
+    color: variaveis.$corTexto;
+}
+
+// ids
+#root{
+    // retira as margens
+    margin: 0;
+    padding: 0;
+    // tamanho p/ ocupar toda tela
+    height: 100vh;
+    // disposicao dos itens
+    display: flex;
+    flex-direction: column;
+}
