@@ -1,18 +1,27 @@
 // importacoes
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import estilos from './corpo.module.scss';
 
 // componente
 const Corpo = () => {
 
+    // estados
     const [vlrIMC, setVlrIMC] = useState(0);
     const [vlrAltura, setVlrAltura] = useState(0);
     const [vlrPeso, setVlrPeso] = useState(0);
 
-    let calculaIMC = function() {
+    // efeitos
+    useEffect(() => {
+        calculaIMC()
+    }, [vlrAltura, vlrPeso]);
+
+    // funcoes
+    let calculaIMC = function(): number {
+        // var retorno
+        let vlr: number = 0
         try {
             // variaveis
-            let vlr: number = 0, vlrTempAlt: number = 0, vlrTempPeso :number = 0;
+            let vlrTempAlt: number = 0, vlrTempPeso :number = 0;
             // tratamento valores
             vlrTempAlt = parseFloat((vlrAltura / 100) as unknown as string);
             vlrTempPeso = parseFloat(vlrPeso as unknown as string);
@@ -22,8 +31,12 @@ const Corpo = () => {
             if (isNaN(vlr)) vlr= 0;
             // define valor
             setVlrIMC(vlr);
+            
         } catch (error: any) {
             console.log(error.stack);
+        } finally {
+            // retorno
+            return vlr;
         }
     }
 
@@ -35,9 +48,9 @@ const Corpo = () => {
                     <form action="" className={estilos.formulario}>
                         <div>
                             <label className="form-label" htmlFor="">Altura (cm): </label>
-                            <input className="form-control" type="number" placeholder="Digite a altura" onChange={(e: any) => setVlrAltura(e.target.value)} onBlur={calculaIMC} />
+                            <input className="form-control" type="number" placeholder="Digite a altura" onChange={(e: any) => setVlrAltura(e.target.value)} />
                             <label className="form-label" htmlFor="">Peso (kg): </label>
-                            <input className="form-control" type="number" placeholder="Digite o peso" onChange={(e: any) => setVlrPeso(e.target.value)} onBlur={calculaIMC} />
+                            <input className="form-control" type="number" placeholder="Digite o peso" onChange={(e: any) => setVlrPeso(e.target.value)} />
                         </div>
                         <label className="form-label" htmlFor="">IMC: {vlrIMC}</label>
                     </form>
